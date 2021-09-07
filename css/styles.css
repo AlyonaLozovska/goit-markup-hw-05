@@ -115,8 +115,8 @@ letter-spacing: 0.03em;
 color: var(--accent-color);
 }
 
-.menu-item not(:last-child) {
-margin-right: 50px
+.menu-item:not(:last-child) {
+margin-right: 50px;
 height: 16px;
 }
 
@@ -138,8 +138,6 @@ padding-bottom: 32px;
 }
 
 
-
-
 .menu-link:hover,
 .menu-link:focus {
 color: var(--accent-color);
@@ -155,8 +153,6 @@ line-height: 16px;
 .tel-link:hover,
 .tel-link:focus {
 color: var(--accent-color);
-padding-width: 122px;
-padding-height: 16px;
 }
 
 /* ========= END HEADER ========== */
@@ -263,9 +259,6 @@ margin-top: 30px;
 margin-left: 30px;
 }
 
-.features-list-item:not(:last-child) {
-/* margin-right: 30px; */
-}
 
 
 .features-title {
@@ -435,21 +428,10 @@ justify-content: space-between;
 }
 
 .customers-list-item {
-display: flex;
-justify-content: center;
-align-items: center;
 width: 170px;
 height: 92px;
-border: 1px solid #AFB1B8;
-box-sizing: border-box;
-border-radius: 4px;
 }
 
-
-
-.customers-list-icon {
-fill: #AFB1B8;
-}
 
 
 .logo-one {
@@ -483,15 +465,25 @@ height: 43.93px;
 }
 
 
+.customers-item-icon {
+display: flex;
+justify-content: center;
+align-items: center;
+box-sizing: border-box;
+border-radius: 4px;
+fill: #AFB1B8;
+border: 1px solid #AFB1B8;
+height: 100%;
+}
+
+
 .customers-item-icon:hover,
 .customers-item-icon:focus {
+border-color: var(--accent-color);
 fill: var(--accent-color);
 }
 
-.customers-list-icon:hover,
-.customers-list-icon:focus {
-fill: var(--accent-color);
-}
+
 
 /* ========= END REGULAR CUSTOMERS ========== */
 
@@ -534,9 +526,7 @@ color: var(--title-text-color);
 margin-top: 20px;
 }
 
-. footer-contact {
-/* margin-top: 9px; */
-}
+
 
 .contact-adress-link {
 font-family: var(--main-font);
@@ -875,7 +865,8 @@ left: 0;
 width: 100vw;
 height: 100vh;
 background-color: rgba(0, 0, 0, 0.2);
-}
+transition: opacity 500ms linear, visibility 500ms linear;
+} 
 
 .modal {
 position: absolute;
@@ -897,16 +888,17 @@ border-radius: 50%;
 border: 1px solid rgba(0, 0, 0, 0.1);
 background-color: transparent;
 cursor: pointer;
+padding: 0;
 }
 
 .modal-button-icon {
-/* position: absolute; */
-display: flex;
-justify-content: center;
-align-items:center;
-left: 22.22%;
-right: 16.67%;
-top: 16.67%;
-bottom: 22.22%;
 fill: #000000;
+width: 16px;
+height: 16px;
+}
+
+.is-hidden {
+opacity: 0;
+visibility: hidden;
+pointer-events: none;
 }
