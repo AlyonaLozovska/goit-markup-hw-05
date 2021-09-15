@@ -79,13 +79,12 @@ align-items: center;
 
 .menu-list {
 display: flex;
-align-items: center;
 margin-left: auto;
 margin-top: 0px;
 margin-bottom: 0px;
 padding-left: 0px;
 flex-shrink: 0;
-align-items: flex-end;
+align-items: center;
 }    
 
 
@@ -93,10 +92,12 @@ align-items: flex-end;
 .menu-link.current::before {
 display: block;
 content: "";
-width: 48px;
+width: 100%;
 height: 4px;
 background-color: #2196F3;
-border-radius: 2px; 
+border-radius: 2px;
+position: absolute;
+bottom: 2px;
 }
 
 .header-social-list-icon {
@@ -127,7 +128,6 @@ color: var(--accent-color);
 }
 
 .menu-item:not(:last-child) {
-/* margin-right: 50px; */
 height: 16px;
 }
 
@@ -328,13 +328,15 @@ justify-content: space-between;
 }
 
 .box-list-item {
+position: relative;
 width: 370px;  
 }
 
 .box-about-item {
 position: absolute;
-text-align: center;
-width: 370px;
+bottom: 0;
+left: 0;
+width: 100%;
 height: 70px;
 padding-top: 27px;
 padding-bottom: 27px;
@@ -419,7 +421,6 @@ height: 20px;
 }
 
 
-
 .social-list-link {
 display: flex;
 align-items: center;
@@ -429,7 +430,7 @@ height: 44px;
 border-radius: 50%;
 background-color: var(--title-text-color);
 fill: #AFB1B8;
-transition: color 250ms linear;
+transition: background-color 500ms, fill 500ms linear;
 }
 
 .social-list-link:hover,
@@ -508,7 +509,7 @@ border-radius: 4px;
 fill: #AFB1B8;
 border: 1px solid #AFB1B8;
 height: 100%;
-transition: color 250ms linear;
+transition: background-color 500ms, fill 500ms linear;
 }
 
 
@@ -617,7 +618,7 @@ height: 44px;
 border-radius: 50%;
 background-color: rgba(255, 255, 255, 0.1);
 fill: var(--title-text-color);
-transition: color 250ms linear;
+transition: background-color 500ms, fill 500ms linear;
 }
 
 .footer-social-list-link:hover,
@@ -649,7 +650,7 @@ color: var(--accent-color);
 }
 
 .menu-item:not(:last-child) {
-/* margin-right: 50px; */
+margin-right: 50px;
 }
 
 .studio {
@@ -667,7 +668,7 @@ letter-spacing: 0.02em;
 
 .menu-link {
 color: var(--meny-color);
-margin-right: 50px;   
+position: relative;
 }
 
 .mail-link,
@@ -677,7 +678,7 @@ margin-right: 50px;
 
 .menu-link:hover,
 .menu-link:focus {
-    color: var(--accent-color);
+color: var(--accent-color);
 }
 
 .menu-link.current {
@@ -739,7 +740,7 @@ cursor: pointer;
 color: var(--meny-color);
 border: none;
 border-radius: 4px;
-transition: color 250ms linear;
+transition: background-color 500ms, fill 500ms linear;
 }
 
 
@@ -815,7 +816,7 @@ box-sizing: border-box;
 border: 1px solid #EEEEEE;
 border-top: 0;
 padding: 20px;
-padding-right: 0;
+padding-right: 24px;
 }
 
 .project-list {
